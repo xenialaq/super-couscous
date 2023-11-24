@@ -4,10 +4,13 @@
   "dependencies": {
     "@mapbox/togeojson": "^0.16.2",
     "@maptiler/sdk": "^1.2.0",
+    "@xmldom/xmldom": "^0.8.10",
     "async": "^3.2.5",
     "async-es": "^3.2.5",
     "dotenv": "^16.3.1",
     "geo-tz": "^7.0.7",
+    "geolib": "^3.3.4",
+    "lodash-es": "^4.17.21",
     "loglevel": "^1.8.1",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
@@ -31,11 +34,13 @@
   "scripts": {
     "clean": "rm -rf node_modules && rm -rf dist && rm -rf package-lock.json",
     "download": "node downloader.js",
+    "strip": "node stripper.js",
     "lint": "npx eslint '**/*.js'",
-    "start": "ls -1 public/extra_activities > public/extra_activities/manifest.txt && npx vite",
-    "build": "ls -1 public/extra_activities > public/extra_activities/manifest.txt && npx vite build"
+    "build:extra": "ls -1 public/extra_activities > public/extra_activities/manifest.txt",
+    "start": "npx vite",
+    "build": "npx vite build"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "",
   "license": "AGPL-3.0",

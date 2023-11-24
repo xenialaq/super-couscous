@@ -45,12 +45,12 @@ const loadTracks = async () => {
     activities[sportType].push(geojson);
   };
 
-  const summary = await fetch('/activities/summary.json').then((r) => r.json());
-  await Promise.all(summary[0].summarizedActivitiesExport.map(
+  const summary = await fetch('/activities/summary.json').then((r) => r.json(), () => []);
+  await Promise.all(summary.map(
     (activity) => loadOne('/activities', `activity_${activity.activityId}.gpx`).catch(log.debug),
   ));
 
-  const manifest = await fetch('/extra_activities/manifest.txt').then((r) => r.text()).then((txt) => txt.split('\n').filter((l) => l.endsWith('.gpx')));
+  const manifest = await fetch('/extra_activities/manifest.txt').then((r) => r.text(), () => '').then((txt) => txt.split('\n').filter((l) => l.endsWith('.gpx')));
   await Promise.all(manifest.map(
     (filename) => loadOne('/extra_activities', filename).catch(log.debug),
   ));
