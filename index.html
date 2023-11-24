@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #map {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .mapstyles-select {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <select class="mapstyles-select">
+    <option value="TOPO">TOPO</option>
+    <option value="OUTDOOR">OUTDOOR</option>
+    <option value="WINTER">WINTER</option>
+    <option value="SATELLITE">SATELLITE</option>
+    <option value="HYBRID">HYBRID</option>
+  </select>
+  <script type="module" src="/index.js"></script>
+</body>
+
+</html>

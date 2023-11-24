@@ -1,0 +1,43 @@
+{
+  "type": "module",
+  "name": "super-couscous",
+  "dependencies": {
+    "@mapbox/togeojson": "^0.16.2",
+    "@maptiler/sdk": "^1.2.0",
+    "async": "^3.2.5",
+    "async-es": "^3.2.5",
+    "dotenv": "^16.3.1",
+    "geo-tz": "^7.0.7",
+    "loglevel": "^1.8.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
+    "ol": "8.2.0",
+    "pino": "^8.16.2",
+    "prompts": "^2.4.2",
+    "puppeteer": "^21.5.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "pino-pretty": "^10.2.3",
+    "vite": "^3.2.3"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf dist && rm -rf package-lock.json",
+    "download": "node downloader.js",
+    "lint": "npx eslint '**/*.js'",
+    "start": "ls -1 public/extra_activities > public/extra_activities/manifest.txt && npx vite",
+    "build": "ls -1 public/extra_activities > public/extra_activities/manifest.txt && npx vite build"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "AGPL-3.0",
+  "description": ""
+}
